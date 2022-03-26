@@ -32,7 +32,6 @@ jobs:
       with:
         app-name: hellojakarta
         package: target/helloworld.war
-        slot-name: hellojakarta
     - name: Azure CLI logout
       run: |
         az logout
