@@ -75,12 +75,14 @@
           <appName>helloworld-1648163079675</appName>
           <pricingTier>P2v2</pricingTier>
           <region>centralus</region>
+          
           <runtime>
             <os>Linux</os>
             <javaVersion>Java 17</javaVersion>
             <webContainer>Tomcat 10.0</webContainer>
             <stopAppDuringDeployment>true</stopAppDuringDeployment>
           </runtime>
+
           <deployment>
             <resources>
               <resource>
@@ -91,6 +93,13 @@
               </resource>
             </resources>
           </deployment>
+
+          <appSettings>
+            <property>
+               <name>WEBSITE_WEBDEPLOY_USE_SCM</name>
+               <value>true</value>
+            </property>
+         </appSettings>
         </configuration>
       </plugin>
     </plugins>
