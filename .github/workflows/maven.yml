@@ -23,16 +23,16 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    #- name: Azure CLI login
-    #  uses: azure/login@v1
-    #  with:
-    #    creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Azure CLI login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Deploy to Azure App Service
       uses: Azure/webapps-deploy@v2
       with:
         app-name: hellojakarta
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: target/helloworld.war
-    #- name: Azure CLI logout
-    #  run: |
-    #    az logout
+    - name: Azure CLI logout
+      run: |
+        az logout
