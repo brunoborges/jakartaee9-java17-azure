@@ -30,7 +30,7 @@ jobs:
     - name: Deploy to Azure App Service
       uses: Azure/webapps-deploy@v2
       with:
-        app-name: helloworld-1648163079675
+        app-name: hellojakarta
         package: target/helloworld.war
     - name: Azure CLI logout
       run: |

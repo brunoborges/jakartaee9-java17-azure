@@ -72,15 +72,15 @@
         <configuration>
           <schemaVersion>v2</schemaVersion>
           <resourceGroup>helloworld-1648163079675-rg</resourceGroup>
-          <appName>helloworld-1648163079675</appName>
+          <appName>hellojakarta</appName>
           <pricingTier>P2v2</pricingTier>
           <region>centralus</region>
-          
+          <stopAppDuringDeployment>true</stopAppDuringDeployment>
+
           <runtime>
             <os>Linux</os>
             <javaVersion>Java 17</javaVersion>
             <webContainer>Tomcat 10.0</webContainer>
-            <stopAppDuringDeployment>true</stopAppDuringDeployment>
           </runtime>
 
           <deployment>

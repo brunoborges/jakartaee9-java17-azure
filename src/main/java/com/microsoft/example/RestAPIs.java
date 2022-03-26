@@ -1,5 +1,7 @@
 package com.microsoft.example;
 
+import java.util.Random;
+
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
@@ -19,13 +21,14 @@ public class RestAPIs {
     }
 
     private long findRandomFibonacciNumber() {
+        int limit = 200;
         var fibonacciSequence = new long[200];
         fibonacciSequence[0] = 0;
         fibonacciSequence[1] = 1;
         for (int i = 2; i < fibonacciSequence.length; i++) {
             fibonacciSequence[i] = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
         }
-        return fibonacciSequence[(int) (Math.random() * 1000)];
+        return fibonacciSequence[new Random().nextInt(limit)];
     }
 
 }

@@ -1,6 +1,7 @@
 package com.microsoft.example;
 
 import java.io.IOException;
+import java.time.Instant;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -23,6 +24,8 @@ public class HelloServlet extends HttpServlet {
         out.println("System.getProperty(\"java.version\") = " + System.getProperty("java.version"));
         out.println("System.getProperty(\"java.runtime.version\") = " + System.getProperty("java.runtime.version"));
         out.println("System.getProperty(\"java.vendor\") = " + System.getProperty("java.vendor"));
+        out.println();
+        out.println(" Current date/time: " + Instant.now());
     }
 
 }
