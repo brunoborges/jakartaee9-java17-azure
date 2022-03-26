@@ -79,6 +79,7 @@
             <os>Linux</os>
             <javaVersion>Java 17</javaVersion>
             <webContainer>Tomcat 10.0</webContainer>
+            <stopAppDuringDeployment>true</stopAppDuringDeployment>
           </runtime>
           <deployment>
             <resources>

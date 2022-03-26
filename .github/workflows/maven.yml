@@ -11,12 +11,11 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up JDK 11
+    - name: Set up JDK
       uses: actions/setup-java@v2
       with:
         java-version: '17'
@@ -24,9 +23,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Azure App Service WebApp
+    - name: Deploy to Azure App Service
       uses: Azure/webapps-deploy@v2
       with:
         app-name: helloworld-1648163079675
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: target/*.war
+        package: target/helloworld.war
