@@ -9,7 +9,7 @@
         <li><a href="./api/numbers/rng">Hit the /api/numbers/rng endpoint</a></li>
         <li><a href="./api/numbers/fibonacci">Hit the /api/numbers/fibonacci endpoint</a></li>
     </ul>
-    <p>version: 1.2</p>
+    <p>version: 1.3</p>
 </body>
 
 </html>

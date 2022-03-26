@@ -72,6 +72,7 @@
         <configuration>
           <schemaVersion>v2</schemaVersion>
           <resourceGroup>helloworld-1648163079675-rg</resourceGroup>
+          <subscriptionId>69476eaa-93fa-4391-afa0-c16bf5305d1e</subscriptionId>
           <appName>hellojakarta</appName>
           <pricingTier>P2v2</pricingTier>
           <region>centralus</region>
