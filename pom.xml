@@ -10,22 +10,28 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <java.version>17</java.version>
-    <maven.compiler.release>${java.version}</maven.compiler.release>
+    <maven.compiler.release>17</maven.compiler.release>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>5.8.2</version>
-      <scope>test</scope>
-    </dependency>
+    <!-- The Servlet API -->
     <dependency>
       <groupId>jakarta.platform</groupId>
       <artifactId>jakarta.jakartaee-web-api</artifactId>
       <version>9.0.0</version>
       <scope>provided</scope>
+    </dependency>
+
+    <!-- the Jersey implementation -->
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet</artifactId>
+      <version>3.0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>3.0.4</version>
     </dependency>
   </dependencies>
 
@@ -39,7 +45,13 @@
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.3.2</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
       </plugin>
+
+      <!-- Cargo for local testing -->
+      <!-- Run: mvn org.codehaus.cargo:cargo-maven3-plugin:run -->
       <plugin>
         <groupId>org.codehaus.cargo</groupId>
         <artifactId>cargo-maven3-plugin</artifactId>
@@ -47,10 +59,12 @@
         <configuration>
           <container>
             <containerId>tomcat10x</containerId>
-            <type>embedded</type>
+            <type>installed</type>
           </container>
         </configuration>
       </plugin>
+
+      <!-- Azure App Service -->
       <plugin>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-webapp-maven-plugin</artifactId>
