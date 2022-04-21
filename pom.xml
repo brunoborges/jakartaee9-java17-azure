@@ -98,7 +98,7 @@
           <appSettings>
             <property>
                <name>WEBSITE_WEBDEPLOY_USE_SCM</name>
-               <value>true</value>
+               <value>false</value>
             </property>
          </appSettings>
         </configuration>
